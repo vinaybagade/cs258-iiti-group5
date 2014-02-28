@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/hello_user"
+        android:textColor="#33b5e5"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/button1"
+        android:background="#f0f0f0"
+        android:textColor="#1e1e1e"
+        android:onClick="adduserclicked"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_marginTop="30dp"
+        android:text="@string/button2"
+        android:background="#f0f0f0"
+        android:textColor="#1e1e1e"
+        android:onClick="authbuttonclicked"
+        android:layout_marginRight="15dp" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:text="@string/button3"
+        android:background="#f0f0f0"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_marginTop="30dp"
+        android:textColor="#1e1e1e"
+        android:layout_marginRight="15dp"
+        android:onClick="viewlistclicked" />
+    
+    
+    
+</RelativeLayout>

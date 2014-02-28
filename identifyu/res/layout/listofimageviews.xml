@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/iddd" >
+
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+	    <ImageView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/image1"
+	        android:src="@drawable/bulbasaur"/>
+
+	    <ImageView
+	        android:id="@+id/image3"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/caterpie" />
+
+	    <ImageView
+	        android:id="@+id/image2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/butterfree" />
+"
+<ImageView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/image4"
+	        android:src="@drawable/charizard"/>
+	    <ImageView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/image5"
+	        android:src="@drawable/charmander"/>
+	    <ImageView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/image6"
+	        android:src="@drawable/ivysaur"/>
+	    <ImageView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/image7"
+	        android:src="@drawable/kakuna"/>
+	    <ImageView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/image8"
+	        android:src="@drawable/squirtle"/>
+	</LinearLayout>
+</ScrollView>
