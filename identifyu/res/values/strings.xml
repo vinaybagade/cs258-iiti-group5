@@ -7,6 +7,9 @@
     <string name="button2">AUTHENTICATE USER</string>
     <string name="button1">ADD USER</string>
     <string name="button3">VIEW USER DATA</string>
-    
+    <string name="nameprompt">ENTER USERNAME</string>
+    <string name="title_activity_useradd">Useradd</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_fullgesturerecogonition">Fullgesturerecogonition</string>
 
 </resources>

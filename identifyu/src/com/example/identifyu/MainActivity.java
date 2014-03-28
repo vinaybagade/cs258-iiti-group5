@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 	public void adduserclicked(View view){
-		Intent intent=new Intent(this, adduser.class);
+		Intent intent=new Intent(this, Useradd.class);
 		startActivity(intent);
 		
 	}

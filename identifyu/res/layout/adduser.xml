@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fing" >
+
+   	<EditText
+        android:id="@+id/username"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/nameprompt"
+        android:inputType="textPersonName"
+        android:textColorHint="#0000ff"
+        android:textColor="#0000ff">
+	</EditText>
+
+   	<ImageButton
+        android:id="@+id/badd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+       	android:background="@null"
+        android:onClick="onaddclicked"
+        android:src="@drawable/addselector"
+        />"
+
+   	<ImageButton
+        android:id="@+id/bcanc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/badd"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+       	android:background="@null"
+        android:onClick="oncancelclicked"
+        android:src="@drawable/cancelselector"
+        />
+
+</RelativeLayout>

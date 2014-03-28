@@ -22,7 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.identifyu.adduser"></activity>
+        <activity android:name="com.example.identifyu.Useradd" >
+        </activity>
+        <activity
+            android:name="com.example.identifyu.userdatacollection"
+            android:label="@string/title_activity_useradd" >
+        </activity>
+        <activity android:name="com.example.identifyu.Gesturerecogonistion" >
+        </activity>
+        <activity
+            android:name="com.example.identifyu.Fullgesturerecogonition"
+            android:label="@string/title_activity_fullgesturerecogonition" >
+        </activity>
     </application>
 
 </manifest>
