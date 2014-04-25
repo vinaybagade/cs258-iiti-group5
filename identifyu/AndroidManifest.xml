@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
     <application
@@ -14,25 +14,20 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.identifyu.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.example.identifyu.Splash"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.identifyu.Useradd" >
+        <activity android:name="com.example.identifyu.Fullgesturerecogonition" >
         </activity>
         <activity
-            android:name="com.example.identifyu.userdatacollection"
-            android:label="@string/title_activity_useradd" >
-        </activity>
-        <activity android:name="com.example.identifyu.Gesturerecogonistion" >
-        </activity>
-        <activity
-            android:name="com.example.identifyu.Fullgesturerecogonition"
-            android:label="@string/title_activity_fullgesturerecogonition" >
+            android:name="com.example.identifyu.MainActivity"
+            android:label="Identifyu" >
         </activity>
     </application>
 

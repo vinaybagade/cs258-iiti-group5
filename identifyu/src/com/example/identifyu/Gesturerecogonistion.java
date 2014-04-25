@@ -2,34 +2,57 @@ package com.example.identifyu;
 
 import java.util.ArrayList;
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
 import android.gesture.Gesture;
-import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.gesture.GestureOverlayView.OnGesturePerformedListener;
 import android.gesture.Prediction;
-import android.view.Menu;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.identifyu.R;
-
-public class Gesturerecogonistion extends Activity implements OnGesturePerformedListener {
-	String s="";
+public class Gesturerecogonistion extends Fragment implements OnGesturePerformedListener {
+	String s = "";
 	GestureLibrary mlib;
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.gesturepad);
-		 mlib=GestureLibraries.fromRawResource(this, R.raw.gestures);
-		if(!mlib.load()){
-			finish();
-		}
-		GestureOverlayView gov=(GestureOverlayView)findViewById(R.id.gestures);
-		gov.addOnGesturePerformedListener(this);
+		
+		
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
+		 mlib=storelibrary.getstore(getActivity());
+			
+			GestureOverlayView gov=(GestureOverlayView)getActivity().findViewById(R.id.confirmgestures);
+			gov.addOnGesturePerformedListener(this);
+			Button confirm=(Button)getActivity().findViewById(R.id.confirmbutton);
+			confirm.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					if(s.equals("")){
+						Toast.makeText(getActivity(),"No such User" , Toast.LENGTH_SHORT).show();
+					}
+					else{
+					Toast.makeText(getActivity(),"User is:"+s , Toast.LENGTH_SHORT).show();
+					s="";
+					}
+				}
+			});
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		
+		return inflater.inflate(R.layout.confirmgesture, container,false);
 	}
 
 	@Override
@@ -37,21 +60,13 @@ public class Gesturerecogonistion extends Activity implements OnGesturePerformed
 		ArrayList<Prediction>pre=mlib.recognize(gesture);
 		if(pre.size()>0){
 			Prediction prezero=pre.get(0);
-			if(prezero.score>1){
+			if(prezero.score>6){
 				
-				s=s+prezero.name;
+				s=prezero.name;
 			}
 		}
-		else{
-			Toast.makeText(getApplicationContext(), "Not a valid gesture", Toast.LENGTH_SHORT).show();
-		}
+		
 		
 	}
-	public void onfinishbuttonclicked(View view){
-		Intent intent=getIntent();
-		intent.putExtra("gesture", s);
-		this.setResult(RESULT_OK,intent);
-		finish();
-		
-	}
+	
 }

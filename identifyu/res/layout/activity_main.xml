@@ -1,45 +1,6 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.example.identifyu.Custompager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/page"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/fing" >
-
+    android:layout_height="match_parent">
     
-    <ImageButton
-        android:id="@+id/button1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-       	android:background="@null"
-        android:onClick="adduserclicked"
-        android:src="@drawable/adduserselector"
-        />
-    <ImageButton
-        android:id="@+id/button2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-       	android:background="@null"
-        android:onClick="authbuttonclicked"
-        android:src="@drawable/authenticateb"
-        />
-    <ImageButton
-        android:id="@+id/button3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-       	android:background="@null"
-        android:onClick="viewbuttonclicked"
-        android:src="@drawable/viewuserselector"
-        />
-    
-    
-    
-</RelativeLayout>
+</com.example.identifyu.Custompager>

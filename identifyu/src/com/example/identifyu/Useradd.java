@@ -1,49 +1,53 @@
 package com.example.identifyu;
 
 
-import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class Useradd extends Activity {
-	public static final int requestcode=1;
+public class Useradd extends Fragment {
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.adduser);
-	}
-	public void onaddclicked(View view){
-		Intent intent=new Intent(this, userdatacollection.class);
-		EditText tv=(EditText)findViewById(R.id.username);
-		String s=tv.getText().toString();
-		if(s.equals("")){
-			Toast.makeText(getApplicationContext(),"Enter a valid username" , Toast.LENGTH_SHORT).show();
-		}
-		else{
-			intent.putExtra("username", s);
-			startActivityForResult(intent, requestcode);
-		}
-	}
-	public void oncancelclicked(View view){
-		finish();
-	}
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if(requestCode==requestcode){
-			if(resultCode==RESULT_OK){
-				
-				Toast.makeText(getApplicationContext(), data.getStringExtra("gesture"), Toast.LENGTH_SHORT).show();
-				
-			}
-			
-		}
 		
 	}
 	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		
+		return inflater.inflate(R.layout.adduser,container,false);
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
+		ImageButton b=(ImageButton)getActivity().findViewById(R.id.badd);
+		b.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent=new Intent(getActivity(), Fullgesturerecogonition.class);
+				EditText tv=(EditText)getActivity().findViewById(R.id.username);
+				String s=tv.getText().toString();
+				if(s.equals("")){
+					Toast.makeText(getActivity(),"Enter a valid username" , Toast.LENGTH_SHORT).show();
+				}
+				else{
+					intent.putExtra("username", s);
+					startActivity(intent);
+				}
+				
+			}
+		});
+	}
 
+	
 }
